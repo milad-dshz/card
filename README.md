@@ -29,7 +29,62 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:flutter_card/flutter_card.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+ 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.grey[100],
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FlutterCard(
+                  width: 100,
+                  height: 100,
+                  cardColor: Colors.white,
+                  radius: 15,
+                  useShadow: true,
+                  offset: const Offset(0,0),
+                  blurRadius: 15,
+                  spreadRadius: 5,
+                  shadowColor: Colors.deepOrange.withOpacity(0.2),
+                ),
+                const SizedBox(height: 50,),
+                FlutterCard(
+                  width: 100,
+                  height: 100,
+                  cardColor: Colors.white,
+                  radius: 15,
+                  useShadow: true,
+                  offset: const Offset(0,0),
+                  blurRadius: 15,
+                  spreadRadius: 5,
+                  shadowColor: Colors.blue.withOpacity(0.2),
+                ),
+              ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 ## Additional information
